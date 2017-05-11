@@ -70,7 +70,7 @@
 
 - (void)setFilterMenu
 {
-    CGFloat W = 70;
+    CGFloat W = _menuScroll.height * 0.9f;
     CGFloat x = 0;
     
     UIImage *iconThumbnail = [_originalImage aspectFill:CGSizeMake(50*[[UIScreen mainScreen] scale], 50*[[UIScreen mainScreen] scale])];
@@ -81,6 +81,7 @@
         }
         
         CLToolbarMenuItem *view = [CLImageEditorTheme menuItemWithFrame:CGRectMake(x, 0, W, _menuScroll.height) target:self action:@selector(tappedFilterPanel:) toolInfo:info];
+        view.iconMargin = 0;
         [_menuScroll addSubview:view];
         x += W;
         

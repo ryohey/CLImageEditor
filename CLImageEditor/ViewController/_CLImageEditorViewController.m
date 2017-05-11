@@ -136,7 +136,7 @@
 
         // 同じ場所にぼかしのViewを追加する
         {
-            UIVisualEffectView *effectView = [UIVisualEffectView.alloc initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+            UIVisualEffectView *effectView = [UIVisualEffectView.alloc initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
             effectView.frame = menuScroll.frame;
             effectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
             [self.view addSubview:effectView];
@@ -422,7 +422,7 @@
     for(UIView *sub in _menuView.subviews){ [sub removeFromSuperview]; }
     
     CGFloat x = 0;
-    CGFloat W = 70;
+    CGFloat W = _menuView.height * 0.9f;
     CGFloat H = _menuView.height;
     
     int toolCount = 0;
