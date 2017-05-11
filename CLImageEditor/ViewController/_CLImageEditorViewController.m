@@ -133,11 +133,18 @@
         menuScroll.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         menuScroll.showsHorizontalScrollIndicator = NO;
         menuScroll.showsVerticalScrollIndicator = NO;
-        
+
+        // 同じ場所にぼかしのViewを追加する
+        {
+            UIVisualEffectView *effectView = [UIVisualEffectView.alloc initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+            effectView.frame = menuScroll.frame;
+            effectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+            [self.view addSubview:effectView];
+        }
+
         [self.view addSubview:menuScroll];
         self.menuView = menuScroll;
     }
-    self.menuView.backgroundColor = [CLImageEditorTheme toolbarColor];
 }
 
 - (void)initImageScrollView
