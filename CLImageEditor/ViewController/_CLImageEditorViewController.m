@@ -149,12 +149,19 @@ static const CGFloat kMenuBarHeight = 80.0f;
         menuScroll.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         menuScroll.showsHorizontalScrollIndicator = NO;
         menuScroll.showsVerticalScrollIndicator = NO;
-        
+
+        // 同じ場所にぼかしのViewを追加する
+        {
+            UIVisualEffectView *effectView = [UIVisualEffectView.alloc initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+            effectView.frame = menuScroll.frame;
+            effectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+            [self.view addSubview:effectView];
+        }
+
         [self.view addSubview:menuScroll];
         self.menuView = menuScroll;
         [_CLImageEditorViewController setConstraintsLeading:@0 trailing:@0 top:nil bottom:@0 height:@(menuScroll.height) width:nil parent:self.view child:menuScroll peer:nil];
     }
-    self.menuView.backgroundColor = [CLImageEditorTheme toolbarColor];
 }
 
 - (void)initImageScrollView
