@@ -46,8 +46,8 @@ static CLImageEditorTheme *_sharedInstance = nil;
         self.backgroundColor                = [UIColor whiteColor];
         self.toolbarColor                   = [UIColor colorWithWhite:1 alpha:0.8];
 		self.toolIconColor                  = @"black";
-        self.toolbarTextColor               = [UIColor blackColor];
-        self.toolbarSelectedButtonColor     = [[UIColor cyanColor] colorWithAlphaComponent:0.2];
+        self.toolbarTextColor               = [UIColor colorWithWhite:0.5 alpha:1.0];
+        self.toolbarSelectedButtonColor     = [UIColor colorWithWhite:0 alpha:0.1];
         self.toolbarTextFont                = [UIFont systemFontOfSize:10];
         self.statusBarStyle                 = UIStatusBarStyleDefault;
     }
