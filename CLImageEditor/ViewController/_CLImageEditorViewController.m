@@ -519,6 +519,10 @@
     return [[CLImageEditorTheme theme] statusBarStyle];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 #pragma mark- Tool actions
 
 - (void)setCurrentTool:(CLImageToolBase *)currentTool
