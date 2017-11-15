@@ -7,6 +7,7 @@
 
 #import "CLImageToolInfo.h"
 #import "UIImage+Utility.h"
+#import "UIImage+Margin.h"
 
 @interface CLImageToolInfo()
 @property (nonatomic, strong) NSString *toolName;
@@ -66,7 +67,7 @@
 
 - (UIImage*)iconImage
 {
-    return [UIImage fastImageWithContentsOfFile:self.iconImagePath];
+    return [[UIImage fastImageWithContentsOfFile:self.iconImagePath] imageWithAppendingMargin:1.25f];
 }
 
 - (NSString*)toolName
